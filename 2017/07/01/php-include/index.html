@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo," />
+  <meta name="keywords" content="PHP," />
 
 
 
@@ -87,19 +87,16 @@
 
 
 
-<meta name="description" content="新增文章在Terminal下輸入以下指令1hexo n xxx    (n=new, xxx為檔案名稱)
-將文章轉換成網頁1hexo generate or hexo g">
+<meta name="description" content="PHP include and require 使用include/require 是用來將其他 PHP file 引入其他的 PHP file中，假設你有一段相同的code要使用在許多 PHP file中，就會需要用到 include/require。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo基本操作">
-<meta property="og:url" content="http://yoursite.com/2017/02/26/hexoBasicUsage/index.html">
+<meta property="og:title" content="PHP include and require">
+<meta property="og:url" content="http://yoursite.com/2017/07/01/php-include/index.html">
 <meta property="og:site_name" content="DC's Life">
-<meta property="og:description" content="新增文章在Terminal下輸入以下指令1hexo n xxx    (n=new, xxx為檔案名稱)
-將文章轉換成網頁1hexo generate or hexo g">
-<meta property="og:updated_time" content="2017-04-08T01:53:51.000Z">
+<meta property="og:description" content="PHP include and require 使用include/require 是用來將其他 PHP file 引入其他的 PHP file中，假設你有一段相同的code要使用在許多 PHP file中，就會需要用到 include/require。">
+<meta property="og:updated_time" content="2017-07-01T06:27:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo基本操作">
-<meta name="twitter:description" content="新增文章在Terminal下輸入以下指令1hexo n xxx    (n=new, xxx為檔案名稱)
-將文章轉換成網頁1hexo generate or hexo g">
+<meta name="twitter:title" content="PHP include and require">
+<meta name="twitter:description" content="PHP include and require 使用include/require 是用來將其他 PHP file 引入其他的 PHP file中，假設你有一段相同的code要使用在許多 PHP file中，就會需要用到 include/require。">
 
 
 
@@ -127,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/02/26/hexoBasicUsage/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/07/01/php-include/"/>
 
 
 
 
 
-  <title> Hexo基本操作 | DC's Life </title>
+  <title> PHP include and require | DC's Life </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
@@ -262,7 +259,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/26/hexoBasicUsage/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/01/php-include/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Derrick Chao">
@@ -283,7 +280,7 @@
             
             
               
-                Hexo基本操作
+                PHP include and require
               
             
           </h1>
@@ -298,8 +295,8 @@
               
                 <span class="post-meta-item-text">發表於</span>
               
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2017-02-26T17:26:14+08:00">
-                2017-02-26
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2017-07-01T13:38:14+08:00">
+                2017-07-01
               </time>
             
 
@@ -334,11 +331,13 @@
       
 
       
-        <h1 id="新增文章"><a href="#新增文章" class="headerlink" title="新增文章"></a>新增文章</h1><p>在Terminal下輸入以下指令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo n xxx    (n=new, xxx為檔案名稱)</div></pre></td></tr></table></figure></p>
-<h1 id="將文章轉換成網頁"><a href="#將文章轉換成網頁" class="headerlink" title="將文章轉換成網頁"></a>將文章轉換成網頁</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo generate or hexo g</div></pre></td></tr></table></figure>
+        <h1 id="PHP-include-and-require-使用"><a href="#PHP-include-and-require-使用" class="headerlink" title="PHP include and require 使用"></a>PHP include and require 使用</h1><p>include/require 是用來將其他 PHP file 引入其他的 PHP file中，假設你有一段相同的code要使用在許多 PHP file中，就會需要用到 include/require。</p>
 <a id="more"></a>
-<h1 id="將網頁發布到Github上"><a href="#將網頁發布到Github上" class="headerlink" title="將網頁發布到Github上"></a>將網頁發布到Github上</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo deploy or hexo d</div></pre></td></tr></table></figure>
-<h1 id="清除快取和網頁public檔"><a href="#清除快取和網頁public檔" class="headerlink" title="清除快取和網頁public檔"></a>清除快取和網頁public檔</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo clean</div></pre></td></tr></table></figure>
+<h2 id="include-require"><a href="#include-require" class="headerlink" title="include / require"></a>include / require</h2><p>include 和 require 使用上的差異：<br>include: 檔案不存在時只會警告，繼續往下執行程式，常用於流程控制中。<br>require: 檔案不存在時會產生錯誤，程式會停止執行，常放於常放於文件的開頭，引入一些必要的靜態檔案。</p>
+<p><strong><font size="4">Syntax</font></strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">include</span> <span class="string">'filename'</span>;</div><div class="line"><span class="keyword">or</span></div><div class="line"><span class="keyword">require</span> <span class="string">'filename'</span>;</div><div class="line"></div><div class="line"><span class="comment">//假設我們有一個 footer.php，內容如下：</span></div><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="keyword">echo</span> <span class="string">"&lt;p&gt;Copyright &amp;copy; 1999-"</span> . date(<span class="string">"Y"</span>) . <span class="string">" W3Schools.com&lt;/p&gt;"</span>;</div><div class="line"><span class="meta">?&gt;</span></div><div class="line"></div><div class="line"><span class="comment">// 將 footer.php放入其他 php 檔案。</span></div><div class="line">&lt;html&gt;</div><div class="line">&lt;body&gt;</div><div class="line"></div><div class="line">&lt;h1&gt;Welcome to my home page!&lt;/h1&gt;</div><div class="line">&lt;p&gt;Some text.&lt;/p&gt;</div><div class="line">&lt;p&gt;Some more text.&lt;/p&gt;</div><div class="line"><span class="meta">&lt;?php</span> <span class="keyword">include</span> <span class="string">'footer.php'</span>;<span class="meta">?&gt;</span></div><div class="line"></div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line">輸出結果：</div><div class="line">Welcome to my home page!</div><div class="line"></div><div class="line">Some text.</div><div class="line"></div><div class="line">Some more text.</div><div class="line"></div><div class="line">Copyright © 1999-2017 W3Schools.com</div><div class="line">*/</div></pre></td></tr></table></figure></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">// Example 2</div><div class="line">// 假設我們有一個 menu.php如下：</div><div class="line">&lt;?php</div><div class="line">echo '&lt;a href="/default.asp"&gt;Home&lt;/a&gt; -</div><div class="line">&lt;a href="/html/default.asp"&gt;HTML Tutorial&lt;/a&gt; -</div><div class="line">&lt;a href="/css/default.asp"&gt;CSS Tutorial&lt;/a&gt; -</div><div class="line">&lt;a href="/js/default.asp"&gt;JavaScript Tutorial&lt;/a&gt; -</div><div class="line">&lt;a href="default.asp"&gt;PHP Tutorial&lt;/a&gt;';</div><div class="line">?&gt;</div><div class="line"></div><div class="line">// 放入下方的php檔案中的 div tag 中</div><div class="line">&lt;html&gt;</div><div class="line">&lt;body&gt;</div><div class="line"></div><div class="line">&lt;div class="menu"&gt;</div><div class="line">&lt;?php include 'menu.php';?&gt;</div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">&lt;h1&gt;Welcome to my home page!&lt;/h1&gt;</div><div class="line">&lt;p&gt;Some text.&lt;/p&gt;</div><div class="line">&lt;p&gt;Some more text.&lt;/p&gt;</div><div class="line"></div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line">/* 輸出結果：</div><div class="line">Home - HTML Tutorial - CSS Tutorial - JavaScript Tutorial - PHP Tutorial</div><div class="line">Welcome to my home page!</div><div class="line"></div><div class="line">Some text.</div><div class="line"></div><div class="line">Some more text.</div><div class="line"></div><div class="line">*/</div></pre></td></tr></table></figure>
+<h2 id="include-once-require-once"><a href="#include-once-require-once" class="headerlink" title="include_once / require_once"></a>include_once / require_once</h2><p>跟 include / require 的差異在於，會判斷檔案是否被載入過，如果尚未被載入才會載入此檔案。</p>
+<p><strong><font size="4">Syntax</font></strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">include_once</span> <span class="string">'filename'</span>;</div><div class="line"><span class="keyword">or</span></div><div class="line"><span class="keyword">require_once</span> <span class="string">'filename'</span>;</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -362,7 +361,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+            <a href="/tags/PHP/" rel="tag"># PHP</a>
           
         </div>
       
@@ -375,8 +374,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/25/Hexo-And-GithubPage/" rel="next" title="使用Hexo和Github建立個人Blog">
-                <i class="fa fa-chevron-left"></i> 使用Hexo和Github建立個人Blog
+              <a href="/2017/06/29/php-controlFlow/" rel="next" title="PHP Control Flow Statement">
+                <i class="fa fa-chevron-left"></i> PHP Control Flow Statement
               </a>
             
           </div>
@@ -385,8 +384,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/08/ios-development-resource/" rel="prev" title="iOS 開發資源整理">
-                iOS 開發資源整理 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/07/01/mySQL-basic/" rel="prev" title="MySQL 基礎">
+                MySQL 基礎 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -505,7 +504,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#新增文章"><span class="nav-number">1.</span> <span class="nav-text">新增文章</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#將文章轉換成網頁"><span class="nav-number">2.</span> <span class="nav-text">將文章轉換成網頁</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#將網頁發布到Github上"><span class="nav-number">3.</span> <span class="nav-text">將網頁發布到Github上</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#清除快取和網頁public檔"><span class="nav-number">4.</span> <span class="nav-text">清除快取和網頁public檔</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PHP-include-and-require-使用"><span class="nav-number">1.</span> <span class="nav-text">PHP include and require 使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#include-require"><span class="nav-number">1.1.</span> <span class="nav-text">include / require</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#include-once-require-once"><span class="nav-number">1.2.</span> <span class="nav-text">include_once / require_once</span></a></li></ol></li></ol></div>
             
 
           </div>
