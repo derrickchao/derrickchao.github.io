@@ -1,0 +1,709 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-tw">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="HTML," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="HTML 基礎 Part 2Style Attributestyle屬性可以更改 html 上顯示的樣式。Syntax1&amp;lt;tagname style=&quot;property:value;&quot;&amp;gt;
+property: CSS 中定義的 propertyvalue: CSS 定義相對應property的value">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML 基礎 Part2">
+<meta property="og:url" content="http://yoursite.com/2017/07/19/html-basic-2/index.html">
+<meta property="og:site_name" content="DC's Life">
+<meta property="og:description" content="HTML 基礎 Part 2Style Attributestyle屬性可以更改 html 上顯示的樣式。Syntax1&amp;lt;tagname style=&quot;property:value;&quot;&amp;gt;
+property: CSS 中定義的 propertyvalue: CSS 定義相對應property的value">
+<meta property="og:updated_time" content="2017-07-19T10:35:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML 基礎 Part2">
+<meta name="twitter:description" content="HTML 基礎 Part 2Style Attributestyle屬性可以更改 html 上顯示的樣式。Syntax1&amp;lt;tagname style=&quot;property:value;&quot;&amp;gt;
+property: CSS 中定義的 propertyvalue: CSS 定義相對應property的value">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/07/19/html-basic-2/"/>
+
+
+
+
+
+  <title> HTML 基礎 Part2 | DC's Life </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">DC's Life</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Programming,Sports etc...</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            歸檔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            標籤
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/19/html-basic-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Derrick Chao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/pusheen.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DC's Life">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                HTML 基礎 Part2
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2017-07-19T17:15:09+08:00">
+                2017-07-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="HTML-基礎-Part-2"><a href="#HTML-基礎-Part-2" class="headerlink" title="HTML 基礎 Part 2"></a>HTML 基礎 Part 2</h1><h2 id="Style-Attribute"><a href="#Style-Attribute" class="headerlink" title="Style Attribute"></a>Style Attribute</h2><p>style屬性可以更改 html 上顯示的樣式。<br><strong>Syntax</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">tagname</span> <span class="attr">style</span>=<span class="string">"property:value;"</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p><strong>property</strong>: CSS 中定義的 property<br><strong>value</strong>: CSS 定義相對應property的value</p>
+<a id="more"></a>
+<h3 id="Background-Color"><a href="#Background-Color" class="headerlink" title="Background Color"></a>Background Color</h3><p><strong>backgrond-color</strong> property設定 HTML element 的背景色<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">style</span>=<span class="string">"background-color:powderblue;"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>This is heading.<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="Text-Color"><a href="#Text-Color" class="headerlink" title="Text Color"></a>Text Color</h3><p><strong>color</strong> property 設定 HTML element的 text color<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"color:red;"</span>&gt;</span>This a red text<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="Fonts"><a href="#Fonts" class="headerlink" title="Fonts"></a>Fonts</h3><p><strong>font-family</strong> property 用來定義 HTML element 所使用的字體<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"font-family:verdana;"</span>&gt;</span>This is verdana font<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="Text-Size"><a href="#Text-Size" class="headerlink" title="Text Size"></a>Text Size</h3><p><strong>font-size</strong> property 定義 HTML element 的字體大小<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">"font-size:150%;"</span>&gt;</span>This font size scale to 150%<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="Text-Alignment"><a href="#Text-Alignment" class="headerlink" title="Text Alignment"></a>Text Alignment</h3><p><strong>text-align</strong> property 定義 HTML element 的文字對齊方式<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"text-align:center;"</span>&gt;</span>Centered Paragraph<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="Text-Formatting-Element"><a href="#Text-Formatting-Element" class="headerlink" title="Text Formatting Element"></a>Text Formatting Element</h2><p>HTML 中定義了一些特殊的Elements給 Text 使用，有以下這幾種：</p>
+<ul>
+<li>&lt;b&gt; - Bold text</li>
+<li>&lt;strong&gt; - Important text</li>
+<li>&lt;i&gt; - Italic text</li>
+<li>&lt;em&gt; - Emphasized text</li>
+<li>&lt;mark&gt; - Marked text</li>
+<li>&lt;small&gt; - Small text</li>
+<li>&lt;delete&gt; - Deleted text</li>
+<li>&lt;ins&gt; - Inserted text</li>
+<li>&lt;sub&gt; - Subscript text</li>
+<li>&lt;sup&gt; - Superscript text</li>
+</ul>
+<h3 id="b-amp-strong"><a href="#b-amp-strong" class="headerlink" title="b &amp; strong"></a>b &amp; strong</h3><p>這兩個標籤在顯示上，並無差異都顯示為粗體字，差別在於 strong 在搜尋時會有較高的權重，而 b 只是一般的文字。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">b</span>&gt;</span>This is a bold text<span class="tag">&lt;/<span class="name">b</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">strong</span>&gt;</span>This is a strong text<span class="tag">&lt;/<span class="name">strong</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="i-amp-em"><a href="#i-amp-em" class="headerlink" title="i &amp; em"></a>i &amp; em</h3><p>與上面有著一樣的相對關係， 顯示上都是斜體字，但 em 在搜尋上有較高的權重。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">i</span>&gt;</span>This text is italic<span class="tag">&lt;/<span class="name">i</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">em</span>&gt;</span>This text is emphasized<span class="tag">&lt;/<span class="name">em</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="small"><a href="#small" class="headerlink" title="small"></a>small</h3><p>將文字縮小<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>HTML <span class="tag">&lt;<span class="name">small</span>&gt;</span>Small<span class="tag">&lt;/<span class="name">small</span>&gt;</span> Formatting<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="mark"><a href="#mark" class="headerlink" title="mark"></a>mark</h3><p>用來highlight文字<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>HTML <span class="tag">&lt;<span class="name">mark</span>&gt;</span>Marked<span class="tag">&lt;/<span class="name">mark</span>&gt;</span> Formatting<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="del"><a href="#del" class="headerlink" title="del"></a>del</h3><p>在文字上多了刪除線 <del>text</del><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>My favorite color is <span class="tag">&lt;<span class="name">del</span>&gt;</span>blue<span class="tag">&lt;/<span class="name">del</span>&gt;</span> red.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="ins"><a href="#ins" class="headerlink" title="ins"></a>ins</h3><p>在文字上多了底線<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>My favorite <span class="tag">&lt;<span class="name">ins</span>&gt;</span>color<span class="tag">&lt;/<span class="name">ins</span>&gt;</span> is red.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="sub"><a href="#sub" class="headerlink" title="sub"></a>sub</h3><p>subscripted 將文字下標顯示<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>This is <span class="tag">&lt;<span class="name">sub</span>&gt;</span>subscripted<span class="tag">&lt;/<span class="name">sub</span>&gt;</span> text.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="sup"><a href="#sup" class="headerlink" title="sup"></a>sup</h3><p>superscripted 將文字上標顯示<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>This is <span class="tag">&lt;<span class="name">sup</span>&gt;</span>superscripted<span class="tag">&lt;/<span class="name">sup</span>&gt;</span> text.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="Comment-Tags"><a href="#Comment-Tags" class="headerlink" title="Comment Tags"></a>Comment Tags</h2><p>Syntax<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- Write your comments here --&gt;</span></div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HTML/" rel="tag"># HTML</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/19/html-basic/" rel="next" title="HTML 基礎">
+                <i class="fa fa-chevron-left"></i> HTML 基礎
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/24/html-table-list-block/" rel="prev" title="HTML之Tables、Lists、Blocks">
+                HTML之Tables、Lists、Blocks <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/pusheen.gif"
+               alt="Derrick Chao" />
+          <p class="site-author-name" itemprop="name">Derrick Chao</p>
+           
+              <p class="site-description motion-element" itemprop="description">Share my everything in my life.</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">文章</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">標籤</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML-基礎-Part-2"><span class="nav-number">1.</span> <span class="nav-text">HTML 基礎 Part 2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Style-Attribute"><span class="nav-number">1.1.</span> <span class="nav-text">Style Attribute</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Background-Color"><span class="nav-number">1.1.1.</span> <span class="nav-text">Background Color</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Text-Color"><span class="nav-number">1.1.2.</span> <span class="nav-text">Text Color</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fonts"><span class="nav-number">1.1.3.</span> <span class="nav-text">Fonts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Text-Size"><span class="nav-number">1.1.4.</span> <span class="nav-text">Text Size</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Text-Alignment"><span class="nav-number">1.1.5.</span> <span class="nav-text">Text Alignment</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Text-Formatting-Element"><span class="nav-number">1.2.</span> <span class="nav-text">Text Formatting Element</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#b-amp-strong"><span class="nav-number">1.2.1.</span> <span class="nav-text">b & strong</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#i-amp-em"><span class="nav-number">1.2.2.</span> <span class="nav-text">i & em</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#small"><span class="nav-number">1.2.3.</span> <span class="nav-text">small</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mark"><span class="nav-number">1.2.4.</span> <span class="nav-text">mark</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#del"><span class="nav-number">1.2.5.</span> <span class="nav-text">del</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ins"><span class="nav-number">1.2.6.</span> <span class="nav-text">ins</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sub"><span class="nav-number">1.2.7.</span> <span class="nav-text">sub</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sup"><span class="nav-number">1.2.8.</span> <span class="nav-text">sup</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Comment-Tags"><span class="nav-number">1.3.</span> <span class="nav-text">Comment Tags</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Derrick Chao</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 強力驅動
+</div>
+
+<div class="theme-info">
+  主題 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

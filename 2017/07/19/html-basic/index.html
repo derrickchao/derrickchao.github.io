@@ -1,0 +1,777 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-tw">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="HTML," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="HTML基礎架構在HTML架構中會有三個主要標籤：html、head、body，大部分的標籤(tag)都會有開始和結束標籤相對應，格式如下：123456&amp;lt;tagName&amp;gt;content...&amp;lt;/tagName&amp;gt;&amp;lt;html&amp;gt;&amp;lt;/html&amp;gt;&amp;lt;head&amp;gt;&amp;lt;/head&amp;gt;&amp;lt;body&amp;gt;&amp;lt;/body&amp;gt;&amp;lt;h1&amp;g">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML 基礎">
+<meta property="og:url" content="http://yoursite.com/2017/07/19/html-basic/index.html">
+<meta property="og:site_name" content="DC's Life">
+<meta property="og:description" content="HTML基礎架構在HTML架構中會有三個主要標籤：html、head、body，大部分的標籤(tag)都會有開始和結束標籤相對應，格式如下：123456&amp;lt;tagName&amp;gt;content...&amp;lt;/tagName&amp;gt;&amp;lt;html&amp;gt;&amp;lt;/html&amp;gt;&amp;lt;head&amp;gt;&amp;lt;/head&amp;gt;&amp;lt;body&amp;gt;&amp;lt;/body&amp;gt;&amp;lt;h1&amp;g">
+<meta property="og:updated_time" content="2017-07-19T09:12:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML 基礎">
+<meta name="twitter:description" content="HTML基礎架構在HTML架構中會有三個主要標籤：html、head、body，大部分的標籤(tag)都會有開始和結束標籤相對應，格式如下：123456&amp;lt;tagName&amp;gt;content...&amp;lt;/tagName&amp;gt;&amp;lt;html&amp;gt;&amp;lt;/html&amp;gt;&amp;lt;head&amp;gt;&amp;lt;/head&amp;gt;&amp;lt;body&amp;gt;&amp;lt;/body&amp;gt;&amp;lt;h1&amp;g">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/07/19/html-basic/"/>
+
+
+
+
+
+  <title> HTML 基礎 | DC's Life </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">DC's Life</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Programming,Sports etc...</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            歸檔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            標籤
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/19/html-basic/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Derrick Chao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/pusheen.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DC's Life">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                HTML 基礎
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2017-07-19T11:11:55+08:00">
+                2017-07-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="HTML基礎架構"><a href="#HTML基礎架構" class="headerlink" title="HTML基礎架構"></a>HTML基礎架構</h1><p>在HTML架構中會有三個主要標籤：<em>html</em>、<em>head</em>、<em>body</em>，大部分的標籤(tag)都會有開始和結束標籤相對應，格式如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">tagName</span>&gt;</span>content...<span class="tag">&lt;/<span class="name">tagName</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello world!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>基本的HTML template格式如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>My WebPage<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div><div class="line"> <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  ......</div><div class="line"> <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<hr>
+<ul>
+<li>&lt;!DOCTYPE html&gt;這一行是用來告訴瀏覽器這個檔案是HTML5檔。</li>
+<li>&lt;html&gt; &lt;/html&gt; 用來包裹整個html程式碼的標籤，可以在這個標籤中定義 lang 屬性，來指定這個網頁的語言， e.g. <strong>&lt;html lang=”en-US”&gt;</strong></li>
+<li>&lt;head&gt; &lt;/head&gt; 這個標籤像是在載入網頁所需要的資源檔和css樣式等等，常用的標籤有 <strong>title, meta, link, script , style</strong>等等。</li>
+<li>&lt;body&gt;&lt;/body&gt; 這個標籤裡就是拿來放你整個網頁內容的程式碼，會用到的標籤相當多，像是 <strong>h1, p, span, a, form, br</strong>等等，族繁不及備載。</li>
+<li>HTML 標籤名不分大小寫，&lt;p&gt;和&lt;P&gt;是一樣的，但是建議一率使用小寫來撰寫。</li>
+</ul>
+<hr>
+<h2 id="head-標籤"><a href="#head-標籤" class="headerlink" title="head 標籤"></a>head 標籤</h2><p>在head標籤中一般定義了以下幾個標籤來使用:</p>
+<ul>
+<li>&lt;title&gt;</li>
+<li>&lt;style&gt;</li>
+<li>&lt;meta&gt;</li>
+<li>&lt;link&gt;</li>
+<li>&lt;script&gt;</li>
+<li>&lt;base&gt;</li>
+</ul>
+<h3 id="title"><a href="#title" class="headerlink" title="title"></a>title</h3><p>定義這一頁在Browser Tab上所顯示的名稱。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Login Page<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="style"><a href="#style" class="headerlink" title="style"></a>style</h3><p>定義這一頁所使用到的 CSS 樣式資訊。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line"> body &#123;background-color: powderblue;&#125;</div><div class="line"> h1 &#123;color: red;&#125;</div><div class="line"> p &#123;color: blue;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="link"><a href="#link" class="headerlink" title="link"></a>link</h3><p>用來連結外部的css檔案。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"myStyle.css"</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="meta"><a href="#meta" class="headerlink" title="meta"></a>meta</h3><p>用來定義像是 <strong>character set, page description, keywords, author, other metadata</strong>等等資訊。</p>
+<ul>
+<li><p>character set</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>description of your web page</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"description"</span> <span class="attr">content</span>=<span class="string">"Free Web content"</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>keywords for search engines</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"HTML, CSS, XML, JavaScript"</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>author of a page</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"author"</span> <span class="attr">content</span>=<span class="string">"Derrick Chao"</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>refresh document every 30 seconds</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"refresh"</span> <span class="attr">content</span>=<span class="string">"30"</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>Viewport</p>
+</li>
+</ul>
+<p>HTML5 新增的這個屬性，隨著智慧型手機普及為了調整網頁在不同裝置上顯示的大小，可藉由這個Viewport設置達到調整。<br><strong>width</strong>根據裝置螢幕寬度設置。<br><strong>initail-scale</strong>初始載入時的縮放比。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="script"><a href="#script" class="headerlink" title="script"></a>script</h3><p>用來定義client-side 的Javascripts，下面範例是用Javascript將 “Hello JavaScript!” 寫入 html id為demo的元素中。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">function myfunction &#123;</div><div class="line">    document.getElementById("demo").innerHTML = "Hello JavaScript!"</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="base"><a href="#base" class="headerlink" title="base"></a>base</h3><p>用來定義這一個頁面常用到的預設網址，可用在此頁的所有link之中。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">base</span> <span class="attr">href</span>=<span class="string">"https://www.w3schools.com/images"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"stickman.gif"</span> <span class="attr">width</span>=<span class="string">"24"</span> <span class="attr">height</span>=<span class="string">"39"</span> <span class="attr">alt</span>=<span class="string">"Stickman"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://www.w3schools.com/"</span>&gt;</span>W3Schools<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="body標籤"><a href="#body標籤" class="headerlink" title="body標籤"></a>body標籤</h2><p>在 body 裡面主要是顯示整個網頁內容的程式碼，這會用到的標籤種類較多，先簡單列一些基本的標籤：</p>
+<ul>
+<li>Headings</li>
+<li>Paragraphs</li>
+<li>Links</li>
+<li>Images</li>
+</ul>
+<h3 id="Headings"><a href="#Headings" class="headerlink" title="Headings"></a>Headings</h3><p>Headings定義了六種大小的標籤h1 ~ h6， h1 字體為最大，h6為最小的字體。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>This is heading 1<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>This is heading 2<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>This is heading 3<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h4</span>&gt;</span>This is heading 4<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h5</span>&gt;</span>This is heading 5<span class="tag">&lt;/<span class="name">h5</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h6</span>&gt;</span>This is heading 6<span class="tag">&lt;/<span class="name">h6</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>Horizontal Rules，用來顯示水平線可以切分內容。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">hr</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="Paragraphs"><a href="#Paragraphs" class="headerlink" title="Paragraphs"></a>Paragraphs</h3><p>&lt;p&gt;用來顯示一個段落的文字，內容中多餘的空白或是行數都會被瀏覽器移除。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>This is a paragraph!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 下面這兩個顯示會是一樣的 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">This is a line</div><div class="line">contains a lot of lines</div><div class="line">in the source code.</div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">This is a      line</div><div class="line">contains   a     lot of lines</div><div class="line">in the       source code.</div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- This is a line contains a lot of lines in the source code. --&gt;</span></div></pre></td></tr></table></figure></p>
+<p>Line Break：&lt;br&gt;，可以用來換行。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>This is<span class="tag">&lt;<span class="name">br</span>&gt;</span>a paragraph<span class="tag">&lt;<span class="name">br</span>&gt;</span>with line breaks.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- </span></div><div class="line">This is</div><div class="line">a paragraph</div><div class="line">with line breaks.</div><div class="line">--&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h3><p><strong>Syntax</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"url"</span>&gt;</span>link text<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- Example --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://www.w3schools.com/html/"</span>&gt;</span>Visit HTML tutorial<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p><strong>href:</strong>設定要連結網站的URL。<br><strong>link text:</strong>顯示超連結的文字。</p>
+<p><strong>Local Links</strong><br>local link的url會以relative URL來做為參考。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"html_images.asp"</span>&gt;</span>Html Images<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p><strong>Links - target Attribute</strong><br>用來決定開啟link時，要以什麼方式呈現，有以下五種：</p>
+<ul>
+<li>_blank - Opens the linked document in a new window or tab</li>
+<li>_self - Opens the linked document in the same window/tab as it was clicked (this is default)</li>
+<li>_parent - Opens the linked document in the parent frame</li>
+<li>_top - Opens the linked document in the full body of the window</li>
+<li>framename - Opens the linked document in a named frame</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://www.w3schools.com/"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span>Visit W3Schools!<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><strong>Links - Image as Link</strong><br>以圖片當作link的顯示。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"default.asp"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"smiley.gif"</span> <span class="attr">alt</span>=<span class="string">"HTML tutorial"</span> <span class="attr">style</span>=<span class="string">"width:42px;height:42px;border:0;"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p><strong>Links - Create a bookmark</strong><br>Bookmark提供User在瀏覽某頁時，可以跳轉到文章中的某段落。</p>
+<ol>
+<li><p>Create a bookmark with id attribute.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">id</span>=<span class="string">"C4"</span>&gt;</span>Chapter 4<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>Add a link to the bookmark with the same page.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#C4"</span>&gt;</span>Jump to Chapter 4 <span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>Or add a link to the bookmark from another page.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"html_demo.html#C4"</span>&gt;</span>Jump to Chapter 4<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="Images"><a href="#Images" class="headerlink" title="Images"></a>Images</h3><p><strong>Syntax</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"url"</span> <span class="attr">alt</span>=<span class="string">"some_text"</span> <span class="attr">style</span>=<span class="string">"width:width;height:height;"</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<ul>
+<li>img tag不需要結束標籤</li>
+<li>alt 的文字是當圖片無法顯示時，會顯示給User看的文字。</li>
+<li>style 用來定義圖片的寬高<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"html5.png"</span> <span class="attr">alt</span>=<span class="string">"HTML5 icon"</span> <span class="attr">style</span>=<span class="string">"width:100px; height:100px;"</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 也可以寫成這樣 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"html5.png"</span> <span class="attr">alt</span>=<span class="string">"HTML5 icon"</span> <span class="attr">width</span>=<span class="string">"100"</span> <span class="attr">height</span>=<span class="string">"100"</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>記得圖片都要定義width和height。<br>設定width和height時，建議使用style來做設定，才不會被外部的styles sheets所更改。<br>支援Gif 動態圖示。</p>
+</blockquote>
+<p><strong>Images Floating</strong><br>可以透過 CSS 的 float property來讓圖片靠在文字左或右。</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"smiley.gif"</span> <span class="attr">alt</span>=<span class="string">"Smiley face"</span> <span class="attr">style</span>=<span class="string">"float:right;width:42px;height:42px;"</span>&gt;</span>
+The image will float to the right of the text.<span class="tag">&lt;/<span class="name">p</span>&gt;</span>
+
+<span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"smiley.gif"</span> <span class="attr">alt</span>=<span class="string">"Smiley face"</span> <span class="attr">style</span>=<span class="string">"float:left;width:42px;height:42px;"</span>&gt;</span>
+The image will float to the left of the text.<span class="tag">&lt;/<span class="name">p</span>&gt;</span>
+</code></pre>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://www.w3schools.com/html/default.asp" target="_blank" rel="external">W3C School HTML</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HTML/" rel="tag"># HTML</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/01/mySQL-basic/" rel="next" title="MySQL 基礎">
+                <i class="fa fa-chevron-left"></i> MySQL 基礎
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/19/html-basic-2/" rel="prev" title="HTML 基礎 Part2">
+                HTML 基礎 Part2 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/pusheen.gif"
+               alt="Derrick Chao" />
+          <p class="site-author-name" itemprop="name">Derrick Chao</p>
+           
+              <p class="site-description motion-element" itemprop="description">Share my everything in my life.</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">文章</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">標籤</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML基礎架構"><span class="nav-number">1.</span> <span class="nav-text">HTML基礎架構</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#head-標籤"><span class="nav-number">1.1.</span> <span class="nav-text">head 標籤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#title"><span class="nav-number">1.1.1.</span> <span class="nav-text">title</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#style"><span class="nav-number">1.1.2.</span> <span class="nav-text">style</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#link"><span class="nav-number">1.1.3.</span> <span class="nav-text">link</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#meta"><span class="nav-number">1.1.4.</span> <span class="nav-text">meta</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#script"><span class="nav-number">1.1.5.</span> <span class="nav-text">script</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#base"><span class="nav-number">1.1.6.</span> <span class="nav-text">base</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#body標籤"><span class="nav-number">1.2.</span> <span class="nav-text">body標籤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Headings"><span class="nav-number">1.2.1.</span> <span class="nav-text">Headings</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Paragraphs"><span class="nav-number">1.2.2.</span> <span class="nav-text">Paragraphs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Links"><span class="nav-number">1.2.3.</span> <span class="nav-text">Links</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Images"><span class="nav-number">1.2.4.</span> <span class="nav-text">Images</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Derrick Chao</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 強力驅動
+</div>
+
+<div class="theme-info">
+  主題 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

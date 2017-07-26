@@ -1,0 +1,775 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-tw">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="HTML," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="TablesHTML的表格由&amp;lt;table&amp;gt;來定義，&amp;lt;tr&amp;gt;定義一列，&amp;lt;th&amp;gt;定義表格的Header，&amp;lt;td&amp;gt;定義每一列裡面的資料顯示。1234567891011121314151617&amp;lt;table&amp;gt; &amp;lt;tr&amp;gt;  &amp;lt;th&amp;gt;Firstname&amp;lt;/th&amp;gt;  &amp;lt;th&amp;gt;Lastname&amp;lt;/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML之Tables、Lists、Blocks">
+<meta property="og:url" content="http://yoursite.com/2017/07/24/html-table-list-block/index.html">
+<meta property="og:site_name" content="DC's Life">
+<meta property="og:description" content="TablesHTML的表格由&amp;lt;table&amp;gt;來定義，&amp;lt;tr&amp;gt;定義一列，&amp;lt;th&amp;gt;定義表格的Header，&amp;lt;td&amp;gt;定義每一列裡面的資料顯示。1234567891011121314151617&amp;lt;table&amp;gt; &amp;lt;tr&amp;gt;  &amp;lt;th&amp;gt;Firstname&amp;lt;/th&amp;gt;  &amp;lt;th&amp;gt;Lastname&amp;lt;/">
+<meta property="og:updated_time" content="2017-07-26T05:27:37.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML之Tables、Lists、Blocks">
+<meta name="twitter:description" content="TablesHTML的表格由&amp;lt;table&amp;gt;來定義，&amp;lt;tr&amp;gt;定義一列，&amp;lt;th&amp;gt;定義表格的Header，&amp;lt;td&amp;gt;定義每一列裡面的資料顯示。1234567891011121314151617&amp;lt;table&amp;gt; &amp;lt;tr&amp;gt;  &amp;lt;th&amp;gt;Firstname&amp;lt;/th&amp;gt;  &amp;lt;th&amp;gt;Lastname&amp;lt;/">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/07/24/html-table-list-block/"/>
+
+
+
+
+
+  <title> HTML之Tables、Lists、Blocks | DC's Life </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">DC's Life</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Programming,Sports etc...</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            歸檔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            標籤
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/24/html-table-list-block/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Derrick Chao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/pusheen.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DC's Life">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                HTML之Tables、Lists、Blocks
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2017-07-24T10:00:10+08:00">
+                2017-07-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Tables"><a href="#Tables" class="headerlink" title="Tables"></a>Tables</h1><p>HTML的表格由&lt;table&gt;來定義，&lt;tr&gt;定義一列，&lt;th&gt;定義表格的Header，&lt;td&gt;定義每一列裡面的資料顯示。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">th</span>&gt;</span>Firstname<span class="tag">&lt;/<span class="name">th</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">th</span>&gt;</span>Lastname<span class="tag">&lt;/<span class="name">th</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">th</span>&gt;</span>Age<span class="tag">&lt;/<span class="name">th</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">td</span>&gt;</span>Derrick<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">td</span>&gt;</span>Chao<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">td</span>&gt;</span>28<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">td</span>&gt;</span>Aurora<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">td</span>&gt;</span>Yu<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">td</span>&gt;</span>28ㄒ<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h2 id="Adding-a-Border"><a href="#Adding-a-Border" class="headerlink" title="Adding a Border"></a>Adding a Border</h2><p>預設 Table 是沒有邊框的，可以使用 CSS property <strong>border</strong> 來做顯示。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">table</span>, <span class="selector-tag">th</span>, <span class="selector-tag">td</span> &#123;</div><div class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid black;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="Collapsed-Borders"><a href="#Collapsed-Borders" class="headerlink" title="Collapsed Borders"></a>Collapsed Borders</h2><p>如果想要把 <strong>border</strong> 的顯示縮為只有一條 <strong>border</strong> 時，可用 CSS property <strong>border-collapse</strong> 來做設定。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">table</span>, <span class="selector-tag">th</span>, <span class="selector-tag">td</span> &#123;</div><div class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid black;</div><div class="line">  <span class="attribute">border-collapse</span>: collapse;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="Adding-Cell-Padding"><a href="#Adding-Cell-Padding" class="headerlink" title="Adding Cell Padding"></a>Adding Cell Padding</h2><p>如果想要 cell 裡的內容跟 border有些間隔，可用 CSS property <strong>padding</strong> 來做設定。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">th</span>, <span class="selector-tag">td</span> &#123;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">5px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="Left-align-Headings"><a href="#Left-align-Headings" class="headerlink" title="Left-align Headings"></a>Left-align Headings</h2><p>預設 Table 的 Headings 是粗體＋置中，如果要靠左對齊可用 CSS property <strong>text-align</strong> 來設定。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">th</span> &#123;</div><div class="line">  <span class="attribute">text-align</span>: left;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="Adding-Border-Spacing"><a href="#Adding-Border-Spacing" class="headerlink" title="Adding Border Spacing"></a>Adding Border Spacing</h2><p>調整 cell 之間的間隔可以使用 CSS property <strong>border-spacing</strong> 來做設定。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">table</span> &#123;</div><div class="line">  <span class="attribute">border-spacing</span>: <span class="number">5px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="Cells-that-Span-Many-Columns"><a href="#Cells-that-Span-Many-Columns" class="headerlink" title="Cells that Span Many Columns"></a>Cells that Span Many Columns</h2><p>讓 cell 展開多個相同的 column 欄位，可使用 html attribute <strong>colspan</strong> 來設定。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">style</span>=<span class="string">"width:100%"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">th</span>&gt;</span>Name<span class="tag">&lt;/<span class="name">th</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">th</span> <span class="attr">colspan</span>=<span class="string">"2"</span>&gt;</span>Telephone<span class="tag">&lt;/<span class="name">th</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>Bill Gates<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>55577854<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>55577855<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="Cells-that-span-Many-Rows"><a href="#Cells-that-span-Many-Rows" class="headerlink" title="Cells that span Many Rows"></a>Cells that span Many Rows</h2><p>讓 cell 展開多個相同的 Row 欄位，可使用 html attribute <strong>rowspan</strong>來設定。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">style</span>=<span class="string">"width:100%"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">th</span>&gt;</span>Name:<span class="tag">&lt;/<span class="name">th</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>Bill Gates<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">th</span> <span class="attr">rowspan</span>=<span class="string">"2"</span>&gt;</span>Telephone:<span class="tag">&lt;/<span class="name">th</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>55577854<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>55577855<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="Adding-a-Caption"><a href="#Adding-a-Caption" class="headerlink" title="Adding a Caption"></a>Adding a Caption</h2><p>幫 Table 的上方增加一個標題，可使用 html attribute <strong>caption</strong>來設定。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">style</span>=<span class="string">"width:100%"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">caption</span>&gt;</span>Monthly savings<span class="tag">&lt;/<span class="name">caption</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">th</span>&gt;</span>Month<span class="tag">&lt;/<span class="name">th</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">th</span>&gt;</span>Savings<span class="tag">&lt;/<span class="name">th</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>January<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>$100<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>February<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>$50<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="A-Special-Style-for-One-Table"><a href="#A-Special-Style-for-One-Table" class="headerlink" title="A Special Style for One Table"></a>A Special Style for One Table</h2><p>透過 <strong>id</strong> attribute 可以為某個 table 設定自己的 style。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">id</span>=<span class="string">"t01"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">th</span>&gt;</span>Firstname<span class="tag">&lt;/<span class="name">th</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">th</span>&gt;</span>Lastname<span class="tag">&lt;/<span class="name">th</span>&gt;</span> </div><div class="line">    <span class="tag">&lt;<span class="name">th</span>&gt;</span>Age<span class="tag">&lt;/<span class="name">th</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>Eve<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>Jackson<span class="tag">&lt;/<span class="name">td</span>&gt;</span> </div><div class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>94<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">table</span><span class="selector-id">#t01</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100%</span>; </div><div class="line">    <span class="attribute">background-color</span>: <span class="number">#f1f1c1</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">table</span><span class="selector-id">#t01</span> <span class="selector-tag">tr</span><span class="selector-pseudo">:nth-child(even)</span> &#123;</div><div class="line">    <span class="attribute">background-color</span>: <span class="number">#eee</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">table</span><span class="selector-id">#t01</span> <span class="selector-tag">tr</span><span class="selector-pseudo">:nth-child(odd)</span> &#123;</div><div class="line">    <span class="attribute">background-color</span>: <span class="number">#fff</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">table</span><span class="selector-id">#t01</span> <span class="selector-tag">th</span> &#123;</div><div class="line">    <span class="attribute">color</span>: white;</div><div class="line">    <span class="attribute">background-color</span>: black;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="Lists"><a href="#Lists" class="headerlink" title="Lists"></a>Lists</h1><p>List 主要有分為兩種格式:</p>
+<ul>
+<li>Unordered List</li>
+<li>Ordered List</li>
+</ul>
+<p>我們先來看 Unordered List</p>
+<h2 id="Unordered-List-Syntax"><a href="#Unordered-List-Syntax" class="headerlink" title="Unordered List Syntax"></a>Unordered List Syntax</h2><p>Unordered List 是由 &lt;ul&gt; 標籤來開始，而每一個 item 則是由 &lt;li&gt; 標籤來開始。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Swift<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Objective-C<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Java<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="Choose-List-Item-Marker"><a href="#Choose-List-Item-Marker" class="headerlink" title="Choose List Item Marker"></a>Choose List Item Marker</h3><p>設定 CSS property <strong>list-style-type</strong> 可以定義不同的 list item marker。</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>disc</td>
+<td>Sets the list item marker to a bullet (Default)</td>
+</tr>
+<tr>
+<td>circle</td>
+<td>Sets the list item marker to a circle</td>
+</tr>
+<tr>
+<td>square</td>
+<td>Sets the list item marker to a square</td>
+</tr>
+<tr>
+<td>none</td>
+<td>The list items will not be marked</td>
+</tr>
+</tbody>
+</table>
+<p>Example:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">style</span>=<span class="string">"list-style-type:disc"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Coffee<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Tea<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Milk<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">style</span>=<span class="string">"list-style-type:circle"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Coffee<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Tea<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Milk<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">style</span>=<span class="string">"list-style-type:square"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Coffee<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Tea<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Milk<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">style</span>=<span class="string">"list-style-type:none"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Coffee<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Tea<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Milk<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="Ordered-List-Syntax"><a href="#Ordered-List-Syntax" class="headerlink" title="Ordered List Syntax"></a>Ordered List Syntax</h2><p>Ordered List 是由 &lt;ol&gt; 標籤來開始，而每一個 item 則是由 &lt;li&gt; 標籤來開始。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Coffee<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Latte<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Water<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="The-Type-Atrribute"><a href="#The-Type-Atrribute" class="headerlink" title="The Type Atrribute"></a>The Type Atrribute</h3><p><strong>Type</strong> atrribute 使用在 &lt;ol&gt; 標籤之中，可以定義要使用的 list item marker。</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type = “1”</td>
+<td>The list items will be numbered with numbers (Default)</td>
+</tr>
+<tr>
+<td>type = “A”</td>
+<td>The list items will be numbered with uppercase letters</td>
+</tr>
+<tr>
+<td>type = “a”</td>
+<td>The list items will be numbered with lowercase letters</td>
+</tr>
+<tr>
+<td>type = “I”</td>
+<td>The list items will be numbered with uppercase roman numbers</td>
+</tr>
+<tr>
+<td>type = “i”</td>
+<td>The list items will be numbered with lowercase roman numbers</td>
+</tr>
+</tbody>
+</table>
+<p>Example:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ol</span> <span class="attr">type</span>=<span class="string">"1"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Coffee<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Tea<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Milk<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">ol</span> <span class="attr">type</span>=<span class="string">"A"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Coffee<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Tea<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Milk<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">ol</span> <span class="attr">type</span>=<span class="string">"a"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Coffee<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Tea<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Milk<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">ol</span> <span class="attr">type</span>=<span class="string">"I"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Coffee<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Tea<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Milk<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">ol</span> <span class="attr">type</span>=<span class="string">"i"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Coffee<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Tea<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Milk<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="Description-List"><a href="#Description-List" class="headerlink" title="Description List"></a>Description List</h2><p>Description list 是個一包含許多術語(term)和術語的敘述的列表。<br>&lt;dl&gt; 定義一個 description list，&lt;dt&gt; 定義 term的名稱，&lt;dd&gt;描述每一個 term。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">dl</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">dt</span>&gt;</span>Objective-C<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">dd</span>&gt;</span>- A Programming language for iOS App<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">dt</span>&gt;</span>Java<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">dd</span>&gt;</span>- A Programming language for Android App<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dl</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="Nested-Lists"><a href="#Nested-Lists" class="headerlink" title="Nested Lists"></a>Nested Lists</h2><p>List 可以巢狀顯示。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Coffee<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Tea</div><div class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>Black tea<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>Green tea<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Milk<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="Horizontal-Lists"><a href="#Horizontal-Lists" class="headerlink" title="Horizontal Lists"></a>Horizontal Lists</h2><p>List 的 style 可以透過 CSS 有許多種的變化。<br>以下是 Horizontal List的範例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line"><span class="selector-tag">ul</span> &#123;</div><div class="line">    <span class="attribute">list-style-type</span>: none;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</div><div class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</div><div class="line">    <span class="attribute">overflow</span>: hidden;</div><div class="line">    <span class="attribute">background-color</span>: <span class="number">#333333</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">li</span> &#123;</div><div class="line">    <span class="attribute">float</span>: left;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">li</span> <span class="selector-tag">a</span> &#123;</div><div class="line">    <span class="attribute">display</span>: block;</div><div class="line">    <span class="attribute">color</span>: white;</div><div class="line">    <span class="attribute">text-align</span>: center;</div><div class="line">    <span class="attribute">padding</span>: <span class="number">16px</span>;</div><div class="line">    <span class="attribute">text-decoration</span>: none;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">li</span> <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">    <span class="attribute">background-color</span>: <span class="number">#111111</span>;</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#home"</span>&gt;</span>Home<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#news"</span>&gt;</span>News<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#contact"</span>&gt;</span>Contact<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#about"</span>&gt;</span>About<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h1 id="Blocks"><a href="#Blocks" class="headerlink" title="Blocks"></a>Blocks</h1><p>每一個 HTML Element 有預設的顯示方式，顯示方式分為兩種</p>
+<ul>
+<li>Block</li>
+<li>inline</li>
+</ul>
+<h2 id="Block-level-Elements"><a href="#Block-level-Elements" class="headerlink" title="Block-level Elements"></a>Block-level Elements</h2><p>Block-level 的 elements 會佔滿螢幕寬度一整行的空間來顯示。例如以下幾個elements:</p>
+<ul>
+<li>&lt;div&gt;</li>
+<li>&lt;h1&gt; - &lt;h6&gt;</li>
+<li>&lt;p&gt;</li>
+<li>&lt;form&gt;</li>
+</ul>
+<h2 id="inline-Elements"><a href="#inline-Elements" class="headerlink" title="inline Elements"></a>inline Elements</h2><p>inline 的 elements 不會佔滿整行而只是佔滿它所需要的顯示範圍的空間。<br>例如以下幾個elements:</p>
+<ul>
+<li>&lt;span&gt;</li>
+<li>&lt;a&gt;</li>
+<li>&lt;img&gt;</li>
+</ul>
+<h2 id="div-Element"><a href="#div-Element" class="headerlink" title="div Element"></a>div Element</h2><p>&lt;div&gt; 是一個容器用來裝其他的 HTML Elements，常使用 <strong>style</strong> 和 <strong>class</strong> 兩個屬性。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color:black;color:white;padding:20px;"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>London<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>London is the capital city of England. It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="span-Element"><a href="#span-Element" class="headerlink" title="span Element"></a>span Element</h2><p>&lt;span&gt; 是一個容器用來裝文字，也是常使用 <strong>style</strong> 和 <strong>class</strong> 兩個屬性。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>My <span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">"color:red"</span>&gt;</span>Important<span class="tag">&lt;/<span class="name">span</span>&gt;</span> Heading<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HTML/" rel="tag"># HTML</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/19/html-basic-2/" rel="next" title="HTML 基礎 Part2">
+                <i class="fa fa-chevron-left"></i> HTML 基礎 Part2
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/pusheen.gif"
+               alt="Derrick Chao" />
+          <p class="site-author-name" itemprop="name">Derrick Chao</p>
+           
+              <p class="site-description motion-element" itemprop="description">Share my everything in my life.</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">文章</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">標籤</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Tables"><span class="nav-number">1.</span> <span class="nav-text">Tables</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Adding-a-Border"><span class="nav-number">1.1.</span> <span class="nav-text">Adding a Border</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Collapsed-Borders"><span class="nav-number">1.2.</span> <span class="nav-text">Collapsed Borders</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Adding-Cell-Padding"><span class="nav-number">1.3.</span> <span class="nav-text">Adding Cell Padding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Left-align-Headings"><span class="nav-number">1.4.</span> <span class="nav-text">Left-align Headings</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Adding-Border-Spacing"><span class="nav-number">1.5.</span> <span class="nav-text">Adding Border Spacing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cells-that-Span-Many-Columns"><span class="nav-number">1.6.</span> <span class="nav-text">Cells that Span Many Columns</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cells-that-span-Many-Rows"><span class="nav-number">1.7.</span> <span class="nav-text">Cells that span Many Rows</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Adding-a-Caption"><span class="nav-number">1.8.</span> <span class="nav-text">Adding a Caption</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A-Special-Style-for-One-Table"><span class="nav-number">1.9.</span> <span class="nav-text">A Special Style for One Table</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lists"><span class="nav-number">2.</span> <span class="nav-text">Lists</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Unordered-List-Syntax"><span class="nav-number">2.1.</span> <span class="nav-text">Unordered List Syntax</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Choose-List-Item-Marker"><span class="nav-number">2.1.1.</span> <span class="nav-text">Choose List Item Marker</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ordered-List-Syntax"><span class="nav-number">2.2.</span> <span class="nav-text">Ordered List Syntax</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Type-Atrribute"><span class="nav-number">2.2.1.</span> <span class="nav-text">The Type Atrribute</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Description-List"><span class="nav-number">2.3.</span> <span class="nav-text">Description List</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nested-Lists"><span class="nav-number">2.4.</span> <span class="nav-text">Nested Lists</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Horizontal-Lists"><span class="nav-number">2.5.</span> <span class="nav-text">Horizontal Lists</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Blocks"><span class="nav-number">3.</span> <span class="nav-text">Blocks</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Block-level-Elements"><span class="nav-number">3.1.</span> <span class="nav-text">Block-level Elements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#inline-Elements"><span class="nav-number">3.2.</span> <span class="nav-text">inline Elements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#div-Element"><span class="nav-number">3.3.</span> <span class="nav-text">div Element</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#span-Element"><span class="nav-number">3.4.</span> <span class="nav-text">span Element</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Derrick Chao</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 強力驅動
+</div>
+
+<div class="theme-info">
+  主題 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
