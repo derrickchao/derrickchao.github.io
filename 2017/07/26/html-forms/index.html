@@ -1,0 +1,887 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-tw">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="HTML," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="Form SyntaxHTML 的 &amp;lt;form&amp;gt; 是用來收集使用者輸入的資料，在 form 標籤內會包含許多 Form elements，Form elements 是 &amp;lt;input&amp;gt; 標籤下各種不同的type，像是 text, radio, submit 等等，格式如下:12345&amp;lt;form&amp;gt;.form elements.&amp;lt;/form&amp;gt;
+
+
+
+T">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML Form 介紹">
+<meta property="og:url" content="http://yoursite.com/2017/07/26/html-forms/index.html">
+<meta property="og:site_name" content="DC's Life">
+<meta property="og:description" content="Form SyntaxHTML 的 &amp;lt;form&amp;gt; 是用來收集使用者輸入的資料，在 form 標籤內會包含許多 Form elements，Form elements 是 &amp;lt;input&amp;gt; 標籤下各種不同的type，像是 text, radio, submit 等等，格式如下:12345&amp;lt;form&amp;gt;.form elements.&amp;lt;/form&amp;gt;
+
+
+
+T">
+<meta property="og:image" content="http://yoursite.com/2017/07/26/html-forms/html_textInput.png">
+<meta property="og:image" content="http://yoursite.com/2017/07/26/html-forms/html_radioButton.png">
+<meta property="og:image" content="http://yoursite.com/2017/07/26/html-forms/html_submitButton.png">
+<meta property="og:image" content="http://yoursite.com/2017/07/26/html-forms/html_fieldset.png">
+<meta property="og:image" content="http://yoursite.com/2017/07/26/html-forms/html_textarea.png">
+<meta property="og:image" content="http://yoursite.com/2017/07/26/html-forms/html_typePassword.png">
+<meta property="og:image" content="http://yoursite.com/2017/07/26/html-forms/html_typeReset.png">
+<meta property="og:image" content="http://yoursite.com/2017/07/26/html-forms/hrml_checkbox.png">
+<meta property="og:image" content="http://yoursite.com/2017/07/26/html-forms/html_typeButton.png">
+<meta property="og:updated_time" content="2017-07-30T06:07:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML Form 介紹">
+<meta name="twitter:description" content="Form SyntaxHTML 的 &amp;lt;form&amp;gt; 是用來收集使用者輸入的資料，在 form 標籤內會包含許多 Form elements，Form elements 是 &amp;lt;input&amp;gt; 標籤下各種不同的type，像是 text, radio, submit 等等，格式如下:12345&amp;lt;form&amp;gt;.form elements.&amp;lt;/form&amp;gt;
+
+
+
+T">
+<meta name="twitter:image" content="http://yoursite.com/2017/07/26/html-forms/html_textInput.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/07/26/html-forms/"/>
+
+
+
+
+
+  <title> HTML Form 介紹 | DC's Life </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">DC's Life</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Programming,Sports etc...</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            歸檔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            標籤
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/26/html-forms/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Derrick Chao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/pusheen.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DC's Life">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                HTML Form 介紹
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2017-07-26T16:59:12+08:00">
+                2017-07-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Form-Syntax"><a href="#Form-Syntax" class="headerlink" title="Form Syntax"></a>Form Syntax</h1><p>HTML 的 &lt;form&gt; 是用來收集使用者輸入的資料，在 form 標籤內會包含許多 Form elements，Form elements 是 &lt;input&gt; 標籤下各種不同的type，像是 text, radio, submit 等等，格式如下:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></div><div class="line">.</div><div class="line">form elements</div><div class="line">.</div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">&lt;input type=”text”&gt;</td>
+<td style="text-align:left">Defines a one-line text input field</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;input type=”radio”&gt;</td>
+<td style="text-align:left">Defins a radio button (for selecting one of many choices)</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;input type=”submit”&gt;</td>
+<td style="text-align:left">Defines a submit button (for submitting the form)</td>
+</tr>
+</tbody>
+</table>
+<a id="more"></a>
+<h2 id="input-Element"><a href="#input-Element" class="headerlink" title="input Element"></a>input Element</h2><p>&lt;input&gt; 是表單中最主要的一個 element，它可以根據 type attribute 而有不同的顯示方式和功能。</p>
+<h3 id="Text-Input"><a href="#Text-Input" class="headerlink" title="Text Input"></a>Text Input</h3><p><strong>&lt;input type=”text”&gt;</strong> 定義一個text input。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></div><div class="line">  First name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"firstname"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  Last name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"lastname"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>Result:<br><img src="/2017/07/26/html-forms/html_textInput.png" style="width:30%; height:30%;"></p>
+<h2 id="Radio-Button-Input"><a href="#Radio-Button-Input" class="headerlink" title="Radio Button Input"></a>Radio Button Input</h2><p><strong>&lt;input type=”radio”&gt;</strong> 定義一個 radio button。<br>radio button 讓使用者只能選擇一個選項。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"gender"</span> <span class="attr">value</span>=<span class="string">"male"</span> <span class="attr">checked</span>&gt;</span> Male<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"gender"</span> <span class="attr">value</span>=<span class="string">"female"</span>&gt;</span> Female<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"gender"</span> <span class="attr">value</span>=<span class="string">"other"</span>&gt;</span> Other</div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>Result:<br><img src="/2017/07/26/html-forms/html_radioButton.png" style="width:20%; height:20%;"></p>
+<h2 id="The-Submit-Button"><a href="#The-Submit-Button" class="headerlink" title="The Submit Button"></a>The Submit Button</h2><p><strong>&lt;input type=”submit”&gt;</strong> 定義一個按鈕用來傳送表單資料。<br>透過 Form 的 <strong>action</strong> attribute 來傳送至指定的頁面去。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/action_page.php"</span>&gt;</span></div><div class="line">  First name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"firstname"</span> <span class="attr">value</span>=<span class="string">"Mickey"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  Last name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"lastname"</span> <span class="attr">value</span>=<span class="string">"Mouse"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Submit"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>Result:<br><img src="/2017/07/26/html-forms/html_submitButton.png" style="width:30%; height:30%"></p>
+<h2 id="Action-Atrribute"><a href="#Action-Atrribute" class="headerlink" title="Action Atrribute"></a>Action Atrribute</h2><p><strong>Action</strong> attribute 用來定義 submit 以後的 form data，要送往哪個 Web Page，如果沒有寫 action attribute 會將資料送往當前頁面。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/action_page.php"</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="Method-Attribute"><a href="#Method-Attribute" class="headerlink" title="Method Attribute"></a>Method Attribute</h2><p><strong>method</strong> attribute 定義要使用哪一種 HTTP method，在這有兩個選項：</p>
+<ul>
+<li><p>GET (Default): 這個方式送出的資料會出現在 web page 的 address field 之中，所以像密碼或是其他重要資訊的資料就不能用這種方式傳送，且 GET 方式有資料大小限制。</p>
+<blockquote>
+<p>/action_page.php?firstname=Mickey&amp;lastname=Mouse</p>
+</blockquote>
+</li>
+<li><p>POST : 這個方式不會將資料顯示在 address field，會打包起來送去給指定的頁面，且沒有大小限制，所以一些重要資料建議使用這個方式。</p>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/action_page.php"</span> <span class="attr">method</span>=<span class="string">"get"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/action_page.php"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="Name-Attribute"><a href="#Name-Attribute" class="headerlink" title="Name Attribute"></a>Name Attribute</h2><p>每一個 input field 必須要有 <strong>name</strong> attribute，才能在 submit 時會被送出，反之則不會被當作資料送出。<br>如下範例，只有 “lastname” 會在 submit 時被送出。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/action_page.php"</span>&gt;</span></div><div class="line">  First name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"Mickey"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  Last name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"lastname"</span> <span class="attr">value</span>=<span class="string">"Mouse"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Submit"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="Grouping-Form-Data-with-fieldset"><a href="#Grouping-Form-Data-with-fieldset" class="headerlink" title="Grouping Form Data with fieldset"></a>Grouping Form Data with fieldset</h2><p>使用&lt;fieldset&gt;可以將表單分類，&lt;legend&gt; 則用來定義這一個表單的標題名稱。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/action_page.php"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">fieldset</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">legend</span>&gt;</span>Personal information:<span class="tag">&lt;/<span class="name">legend</span>&gt;</span></div><div class="line">    First name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"firstname"</span> <span class="attr">value</span>=<span class="string">"Mickey"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">    Last name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"lastname"</span> <span class="attr">value</span>=<span class="string">"Mouse"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Submit"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">fieldset</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>Result:<br><img src="/2017/07/26/html-forms/html_fieldset.png" style="width:30%; height:30%;"></p>
+<h1 id="Form-Elements"><a href="#Form-Elements" class="headerlink" title="Form Elements"></a>Form Elements</h1><h2 id="Select-Element"><a href="#Select-Element" class="headerlink" title="Select Element"></a>Select Element</h2><p>&lt;select&gt; 會生成一個 下拉式選單(drop-down list)。<br>&lt;option&gt; 定義每一個可選的項目。<br><strong>selected</strong> 定義初始選擇的項目。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">"cars"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"volvo"</span>&gt;</span>Volvo<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"saab"</span> <span class="attr">selected</span>&gt;</span>Saab<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"fiat"</span>&gt;</span>Fiat<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"audi"</span>&gt;</span>Audi<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="textarea-Element"><a href="#textarea-Element" class="headerlink" title="textarea Element"></a>textarea Element</h2><p>&lt;textarea&gt;定義多行的文字輸入。<br><strong>rows</strong> attribute 定義在 textarea 可視的行數。<br><strong>cols</strong> attribute 定義在 textarea 可視的寬度。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">name</span>=<span class="string">"message"</span> <span class="attr">rows</span>=<span class="string">"10"</span> <span class="attr">cols</span>=<span class="string">"30"</span>&gt;</span></div><div class="line">The cat was playing in the garden.</div><div class="line"><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>Result:<br><img src="/2017/07/26/html-forms/html_textarea.png" style="width:30%; height:30%;"></p>
+<h2 id="button-Element"><a href="#button-Element" class="headerlink" title="button Element"></a>button Element</h2><p>&lt;button&gt;定義一個可點選的按鈕。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">onclick</span>=<span class="string">"alert('Hello World!')"</span>&gt;</span>Click Me<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<hr>
+<p>HTML5 新增了三個 Elements</p>
+<ul>
+<li>&lt;datalist&gt;</li>
+<li>&lt;keygen&gt;</li>
+<li>&lt;output&gt;<h2 id="datalist-Elemnet"><a href="#datalist-Elemnet" class="headerlink" title="datalist Elemnet"></a>datalist Elemnet</h2>&lt;datalist&gt;除了 <strong>Safari</strong> 不支援外，其他 Browser 都支援。<br>它也是提供一個下拉式選單，不過跟 &lt;select&gt;的差異在於，它可讓使用者另外自己輸入想要的內容。<br>&lt;input&gt;裡的 <strong>list</strong> attribute 必須與 &lt;datalist&gt; 裡的 <strong>id</strong> attribute 的值一致。<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/action_page.php"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">list</span>=<span class="string">"browsers"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">datalist</span> <span class="attr">id</span>=<span class="string">"browsers"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Internet Explorer"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Firefox"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Chrome"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Opera"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Safari"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">datalist</span>&gt;</span> </div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="keygen-Element"><a href="#keygen-Element" class="headerlink" title="keygen Element"></a>keygen Element</h2><p>&lt;keygen&gt; 提供加密的方式傳送資料，當表單 submit 時會產生兩個 key，public key 和 private key，public key 會送至 server，而private key 會留在本地，未來可以作為驗證。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/action_page.php"</span>&gt;</span></div><div class="line">  Username: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"user"</span>&gt;</span></div><div class="line">  Encryption: <span class="tag">&lt;<span class="name">keygen</span> <span class="attr">name</span>=<span class="string">"security"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="Output-Element"><a href="#Output-Element" class="headerlink" title="Output Element"></a>Output Element</h2><p>&lt;output&gt;可用來輸出script計算的值。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/action_page.php"</span></span></div><div class="line">  <span class="attr">oninput</span>=<span class="string">"x.value=parseInt(a.value)+parseInt(b.value)"</span>&gt;</div><div class="line">  0</div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"range"</span>  <span class="attr">id</span>=<span class="string">"a"</span> <span class="attr">name</span>=<span class="string">"a"</span> <span class="attr">value</span>=<span class="string">"50"</span>&gt;</span></div><div class="line">  100 +</div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"number"</span> <span class="attr">id</span>=<span class="string">"b"</span> <span class="attr">name</span>=<span class="string">"b"</span> <span class="attr">value</span>=<span class="string">"50"</span>&gt;</span></div><div class="line">  =</div><div class="line">  <span class="tag">&lt;<span class="name">output</span> <span class="attr">name</span>=<span class="string">"x"</span> <span class="attr">for</span>=<span class="string">"a b"</span>&gt;</span><span class="tag">&lt;/<span class="name">output</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h1 id="Input-Types"><a href="#Input-Types" class="headerlink" title="Input Types"></a>Input Types</h1><h2 id="Password"><a href="#Password" class="headerlink" title="Password"></a>Password</h2><p>&lt;input type=”password”&gt; 定義一個 password field，輸入的資料將會被遮蔽。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></div><div class="line">  User name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"username"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  User password:<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">"psw"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>Result:<br><img src="/2017/07/26/html-forms/html_typePassword.png" style="width:30%; height:30%;"></p>
+<h2 id="Reset"><a href="#Reset" class="headerlink" title="Reset"></a>Reset</h2><p>&lt;input type=”reset”&gt; 定義一個 reset button，會重置所有在 form 裡的資料回預設值。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/action_page.php"</span>&gt;</span></div><div class="line">  First name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"firstname"</span> <span class="attr">value</span>=<span class="string">"Mickey"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  Last name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"lastname"</span> <span class="attr">value</span>=<span class="string">"Mouse"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Submit"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"reset"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>Result:<br><img src="/2017/07/26/html-forms/html_typeReset.png" style="width:30%; height:30%;"></p>
+<h2 id="Checkbox"><a href="#Checkbox" class="headerlink" title="Checkbox"></a>Checkbox</h2><p>&lt;input type=”checkbox”&gt; 定義一個checkbox清單，可以讓使用者選擇零到多個選項。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"vehicle1"</span> <span class="attr">value</span>=<span class="string">"Bike"</span>&gt;</span> I have a bike<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"vehicle2"</span> <span class="attr">value</span>=<span class="string">"Car"</span>&gt;</span> I have a car </div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>Result:<br><img src="/2017/07/26/html-forms/hrml_checkbox.png" style="width:30%; height:30%;"></p>
+<h2 id="Button"><a href="#Button" class="headerlink" title="Button"></a>Button</h2><p>&lt;input type=”button”&gt; 定義一個按鈕。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">onclick</span>=<span class="string">"alert('Hello World!')"</span> <span class="attr">value</span>=<span class="string">"Click Me!"</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>Result:<br><img src="/2017/07/26/html-forms/html_typeButton.png" style="width:20%; height:20%;"></p>
+<hr>
+<h2 id="HTML5-New-Input-Types"><a href="#HTML5-New-Input-Types" class="headerlink" title="HTML5 New Input Types"></a>HTML5 New Input Types</h2><p>HTML5 新增的 input types 如下：</p>
+<ul>
+<li>color</li>
+<li>date</li>
+<li>datetime-local</li>
+<li>email</li>
+<li>month</li>
+<li>number</li>
+<li>range</li>
+<li>search</li>
+<li>tel</li>
+<li>time</li>
+<li>url</li>
+<li>week</li>
+</ul>
+<h3 id="Color"><a href="#Color" class="headerlink" title="Color"></a>Color</h3><p>&lt;input type=”color”&gt; 會產生一個 color picker 給使用者來選擇，如果 browser 有support就會出現。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></div><div class="line">  Select your favorite color:</div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"color"</span> <span class="attr">name</span>=<span class="string">"favcolor"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h3><p>&lt;input type=”date”&gt; 會產生一個 date picker 給使用者來選擇，如果 browser 有support就會出現。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></div><div class="line">  Birthday:</div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"date"</span> <span class="attr">name</span>=<span class="string">"bday"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 你也可以增加一些限制條件 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></div><div class="line">  Enter a date before 1980-01-01:</div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"date"</span> <span class="attr">name</span>=<span class="string">"bday"</span> <span class="attr">max</span>=<span class="string">"1979-12-31"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  Enter a date after 2000-01-01:</div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"date"</span> <span class="attr">name</span>=<span class="string">"bday"</span> <span class="attr">min</span>=<span class="string">"2000-01-02"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="Datetime-local"><a href="#Datetime-local" class="headerlink" title="Datetime-local"></a>Datetime-local</h3><p>&lt;input type=”datetime-local”&gt; 提供使用者日期和時間的設定，但不包括 time zone ，如果 browser 有support就會出現。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></div><div class="line">  Birthday (date and time):</div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"datetime-local"</span> <span class="attr">name</span>=<span class="string">"bdaytime"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="Email"><a href="#Email" class="headerlink" title="Email"></a>Email</h3><p>&lt;input type=”email”&gt;，提供一個 input field 會檢查使用者輸入的資料是否符合 email 格式，如果 browser 有support就能驗證email format。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></div><div class="line">  E-mail:</div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"email"</span> <span class="attr">name</span>=<span class="string">"email"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="Month"><a href="#Month" class="headerlink" title="Month"></a>Month</h3><p>&lt;input type=”month”&gt; 提供使用者選擇 月 跟 年，如果 browser 有support就會出現。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></div><div class="line">  Birthday (month and year):</div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"month"</span> <span class="attr">name</span>=<span class="string">"bdaymonth"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h3><p>&lt;input type=”number”&gt; 提供一個可選擇數字的 input field，你可以限制數字的範圍。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></div><div class="line">  Quantity (between 1 and 5):</div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"number"</span> <span class="attr">name</span>=<span class="string">"quantity"</span> <span class="attr">min</span>=<span class="string">"1"</span> <span class="attr">max</span>=<span class="string">"5"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="Range"><a href="#Range" class="headerlink" title="Range"></a>Range</h3><p>&lt;input type=”range”&gt; 定義一個類似 slide control，可使用者滑動來選擇數值，預設的範圍是 0 ~ 100，可自己指定 <strong>min, max, step</strong> attribute來限制一些條件。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"range"</span> <span class="attr">name</span>=<span class="string">"points"</span> <span class="attr">min</span>=<span class="string">"0"</span> <span class="attr">max</span>=<span class="string">"10"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="Search"><a href="#Search" class="headerlink" title="Search"></a>Search</h3><p>&lt;input type=”search”&gt; 提供一個搜尋框， Browser會將其調整圓邊且提供清除輸入資料的叉叉按鈕，<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></div><div class="line">  Search Google:</div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"search"</span> <span class="attr">name</span>=<span class="string">"googlesearch"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="Tel"><a href="#Tel" class="headerlink" title="Tel"></a>Tel</h3><p>&lt;input type=”tel”&gt; 提供一個輸入電話號碼的 input field，不過現在幾乎各家 Browser都還不支援。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></div><div class="line">  Telephone:</div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"tel"</span> <span class="attr">name</span>=<span class="string">"usrtel"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="Time"><a href="#Time" class="headerlink" title="Time"></a>Time</h3><p>&lt;input type=”time”&gt; 提供使用者選擇時間但不包含 time zone，<br>如果 browser 有support就會出現。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></div><div class="line">  Select a time:</div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"time"</span> <span class="attr">name</span>=<span class="string">"usr_time"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h3><p>&lt;input type=”url”&gt; 提供一個 input field 可以驗證使用者輸入的資料是否符合 URL fromat，如果 browser 有支援就可提供驗證功能。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></div><div class="line">  Add your homepage:</div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"url"</span> <span class="attr">name</span>=<span class="string">"homepage"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="Week"><a href="#Week" class="headerlink" title="Week"></a>Week</h3><p>&lt;input type=”week”&gt; 提供使用者選擇 週 和 年，如果 browser 有support就會出現。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></div><div class="line">  Select a week:</div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"week"</span> <span class="attr">name</span>=<span class="string">"week_year"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h1 id="Input-Attributes"><a href="#Input-Attributes" class="headerlink" title="Input Attributes"></a>Input Attributes</h1><p>下表是 input 標籤內可用的一些限制條件</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Attribute</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">disabled</td>
+<td>Specifies that an input field should be disabled</td>
+</tr>
+<tr>
+<td style="text-align:center">max</td>
+<td>Specifies the maximum value for an input field</td>
+</tr>
+<tr>
+<td style="text-align:center">maxlength</td>
+<td>Specifies the maximum number of character for an input field</td>
+</tr>
+<tr>
+<td style="text-align:center">min</td>
+<td>Specifies the minimum value for an input field</td>
+</tr>
+<tr>
+<td style="text-align:center">pattern</td>
+<td>Specifies a regular expression to check the input value against</td>
+</tr>
+<tr>
+<td style="text-align:center">readonly</td>
+<td>Specifies that an input field is read only (cannot be changed)</td>
+</tr>
+<tr>
+<td style="text-align:center">required</td>
+<td>Specifies that an input field is required (must be filled out)</td>
+</tr>
+<tr>
+<td style="text-align:center">size</td>
+<td>Specifies the width (in characters) of an input field</td>
+</tr>
+<tr>
+<td style="text-align:center">step</td>
+<td>Specifies the legal number intervals for an input field</td>
+</tr>
+<tr>
+<td style="text-align:center">value</td>
+<td>Specifies the default value for an input field</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Value"><a href="#Value" class="headerlink" title="Value"></a>Value</h2><p>設定 input field 裡的初始值。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">""</span>&gt;</span></div><div class="line">First name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"firstname"</span> <span class="attr">value</span>=<span class="string">"John"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="Readonly"><a href="#Readonly" class="headerlink" title="Readonly"></a>Readonly</h2><p>設定 input field 只能 readonly不能被修改，在 submit 時資料依然能夠被傳送。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">""</span>&gt;</span></div><div class="line">First name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"firstname"</span> <span class="attr">value</span>=<span class="string">"John"</span> <span class="attr">readonly</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="Disabled"><a href="#Disabled" class="headerlink" title="Disabled"></a>Disabled</h2><p>功能上與 Readonly 相當接近，但 disabled 在 submit 時不會被傳送出去。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">""</span>&gt;</span></div><div class="line">First name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"firstname"</span> <span class="attr">value</span>=<span class="string">"John"</span> <span class="attr">disabled</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="Size"><a href="#Size" class="headerlink" title="Size"></a>Size</h2><p>設定 input field 的長度。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">""</span>&gt;</span></div><div class="line">First name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"firstname"</span> <span class="attr">value</span>=<span class="string">"John"</span> <span class="attr">size</span>=<span class="string">"40"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line">``` </div><div class="line">## MaxLength</div><div class="line">設定輸入資料的長度限制。</div><div class="line">```html</div><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">""</span>&gt;</span></div><div class="line">First name:<span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"firstname"</span> <span class="attr">maxlength</span>=<span class="string">"10"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<hr>
+<p>以下是 HTML5 為&lt;input&gt;新增的 Attributes</p>
+<ul>
+<li>aotocomplete</li>
+<li>autofocus</li>
+<li>form</li>
+<li>formaction</li>
+<li>formenctype</li>
+<li>formmethod</li>
+<li>formnovalidate</li>
+<li>formtarget</li>
+<li>height and width</li>
+<li>list</li>
+<li>min and max</li>
+<li>multiple</li>
+<li>pattern</li>
+<li>placeholder</li>
+<li>required</li>
+<li>step</li>
+</ul>
+<p>以下是 HTML5 為&lt;form&gt;新增的 Attributes</p>
+<ul>
+<li>autocomplete</li>
+<li>novalidate</li>
+</ul>
+<h2 id="Autocomplete"><a href="#Autocomplete" class="headerlink" title="Autocomplete"></a>Autocomplete</h2><p>用來設定表單的自動完成是否開啟，當有開啟時 Browser 會自動完成使用之前輸入過的資料，在表單中可以各別設定 input field 是否開啟或關閉，<strong>autocomplete</strong> attribute 可用於 &lt;form&gt;和&lt;input&gt;中。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/action_page.php"</span> <span class="attr">autocomplete</span>=<span class="string">"on"</span>&gt;</span></div><div class="line">  First name:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"fname"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  Last name: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"lname"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  E-mail: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"email"</span> <span class="attr">name</span>=<span class="string">"email"</span> <span class="attr">autocomplete</span>=<span class="string">"off"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="Novalidate"><a href="#Novalidate" class="headerlink" title="Novalidate"></a>Novalidate</h2><p>這是個給 &lt;form&gt; 使用的 attribute，當設定時傳送表單資料，需驗證的欄位將不會被驗證。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/action_page.php"</span> <span class="attr">novalidate</span>&gt;</span></div><div class="line">  E-mail: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"email"</span> <span class="attr">name</span>=<span class="string">"user_email"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="Autofocus"><a href="#Autofocus" class="headerlink" title="Autofocus"></a>Autofocus</h2><p>當設定這個 attribute 時，頁面一載入便會自動focus到設定的 input field上。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">First name:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"fname"</span> <span class="attr">autofocus</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="Form"><a href="#Form" class="headerlink" title="Form"></a>Form</h2><p>這個屬性可以將 input field 和 表單關聯起來，即使 input field 不在 &lt;form&gt; 的標籤之中。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/action_page.php"</span> <span class="attr">id</span>=<span class="string">"form1"</span>&gt;</span></div><div class="line">  First name: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"fname"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Submit"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"></div><div class="line">Last name: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"lname"</span> <span class="attr">form</span>=<span class="string">"form1"</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="Formaction"><a href="#Formaction" class="headerlink" title="Formaction"></a>Formaction</h2><p>可以用來覆寫原本的 action 所導向的頁面，用於 type=”submit” 和 type=”image”。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/action_page.php"</span>&gt;</span></div><div class="line">  First name: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"fname"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  Last name: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"lname"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Submit"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">formaction</span>=<span class="string">"/action_page2.php"</span></span></div><div class="line">  <span class="attr">value</span>=<span class="string">"Submit as admin"</span>&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="Formenctype"><a href="#Formenctype" class="headerlink" title="Formenctype"></a>Formenctype</h2><p>設定表單資料傳送時的編碼方式，只有在 method 是 post 時才有效用，用於 type=”submit” 和 type=”image”。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/action_page_binary.asp"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></div><div class="line">  First name: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"fname"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Submit"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">formenctype</span>=<span class="string">"multipart/form-data"</span></span></div><div class="line">  <span class="attr">value</span>=<span class="string">"Submit as Multipart/form-data"</span>&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="Formmethod"><a href="#Formmethod" class="headerlink" title="Formmethod"></a>Formmethod</h2><p>可覆寫表單傳送時用的 http method，用於 type=”submit” 和 type=”image”。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/action_page.php"</span> <span class="attr">method</span>=<span class="string">"get"</span>&gt;</span></div><div class="line">  First name: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"fname"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  Last name: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"lname"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Submit"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">formmethod</span>=<span class="string">"post"</span> <span class="attr">formaction</span>=<span class="string">"action_page_post.asp"</span></span></div><div class="line">  <span class="attr">value</span>=<span class="string">"Submit using POST"</span>&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="Formnovalidate"><a href="#Formnovalidate" class="headerlink" title="Formnovalidate"></a>Formnovalidate</h2><p>可覆寫表單的novalidate的值，讓資料無需驗證即可傳送，用於 type=”submit”上。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/action_page.php"</span>&gt;</span></div><div class="line">  E-mail: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"email"</span> <span class="attr">name</span>=<span class="string">"userid"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Submit"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">formnovalidate</span> <span class="attr">value</span>=<span class="string">"Submit without validation"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="Formtarget"><a href="#Formtarget" class="headerlink" title="Formtarget"></a>Formtarget</h2><p>可以覆寫 form 的 <strong>target</strong> attribute，可自訂要導向新頁面或是其他可用的參數，在 type=”submit”, type=”image”中使用。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/action_page.php"</span>&gt;</span></div><div class="line">  First name: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"fname"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  Last name: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"lname"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Submit as normal"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">formtarget</span>=<span class="string">"_blank"</span></span></div><div class="line">  <span class="attr">value</span>=<span class="string">"Submit to a new window"</span>&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="Height-and-Width"><a href="#Height-and-Width" class="headerlink" title="Height and Width"></a>Height and Width</h2><p>這兩個屬性使用在 &lt;input type=”image”&gt;之中，定義圖片的寬與高。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"image"</span> <span class="attr">src</span>=<span class="string">"img_submit.gif"</span> <span class="attr">alt</span>=<span class="string">"Submit"</span> <span class="attr">width</span>=<span class="string">"48"</span> <span class="attr">height</span>=<span class="string">"48"</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><p>這個屬性是跟 &lt;datalist&gt; 一起使用。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">list</span>=<span class="string">"browsers"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">datalist</span> <span class="attr">id</span>=<span class="string">"browsers"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Internet Explorer"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Firefox"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Chrome"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Opera"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Safari"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">datalist</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="Min-and-Max"><a href="#Min-and-Max" class="headerlink" title="Min and Max"></a>Min and Max</h2><p>定義 &lt;input&gt; 的最小值與最大值，在以下 input types 中使用：<br>number, range, date, datetime-local, month, time and week。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Enter a date before 1980-01-01:</div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"date"</span> <span class="attr">name</span>=<span class="string">"bday"</span> <span class="attr">max</span>=<span class="string">"1979-12-31"</span>&gt;</span></div><div class="line"></div><div class="line">Enter a date after 2000-01-01:</div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"date"</span> <span class="attr">name</span>=<span class="string">"bday"</span> <span class="attr">min</span>=<span class="string">"2000-01-02"</span>&gt;</span></div><div class="line"></div><div class="line">Quantity (between 1 and 5):</div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"number"</span> <span class="attr">name</span>=<span class="string">"quantity"</span> <span class="attr">min</span>=<span class="string">"1"</span> <span class="attr">max</span>=<span class="string">"5"</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="Multiple"><a href="#Multiple" class="headerlink" title="Multiple"></a>Multiple</h2><p>可以讓使用者有多種選項可選擇，主要用於這兩個 input types: email, file。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Select images: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">name</span>=<span class="string">"img"</span> <span class="attr">multiple</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="Pattern"><a href="#Pattern" class="headerlink" title="Pattern"></a>Pattern</h2><p>可在 &lt;input&gt; 中設定正規表示式去檢查，用於以下幾個 input types: text, search, url, tel, email, and password.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Country code: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"country_code"</span> <span class="attr">pattern</span>=<span class="string">"[A-Za-z]&#123;3&#125;"</span> <span class="attr">title</span>=<span class="string">"Three letter country code"</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="Placeholder"><a href="#Placeholder" class="headerlink" title="Placeholder"></a>Placeholder</h2><p>用來提示使用者該在 input field 輸入怎樣的資料，用於以下幾個 input types: text, search, url, tel, email, and password.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"fname"</span> <span class="attr">placeholder</span>=<span class="string">"First name"</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="Required"><a href="#Required" class="headerlink" title="Required"></a>Required</h2><p>定義指定的 input field 需要填寫資料才能夠進行 submit，用於以下幾個 input types: text, search, url, tel, email, password, date pickers, number, checkbox, radio, and file.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Username: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"usrname"</span> <span class="attr">required</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="Step"><a href="#Step" class="headerlink" title="Step"></a>Step</h2><p>定義 &lt;input&gt; element 中數字類型的輸入，每次值增加或減少變化時的基底為多少，在 range 中可以與 min, max 共同使用，用於以下幾個 input types: number, range, date, datetime-local, month, time and week.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"number"</span> <span class="attr">name</span>=<span class="string">"points"</span> <span class="attr">step</span>=<span class="string">"3"</span>&gt;</span></div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HTML/" rel="tag"># HTML</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/24/html-table-list-block/" rel="next" title="HTML之Tables、Lists、Blocks">
+                <i class="fa fa-chevron-left"></i> HTML之Tables、Lists、Blocks
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/pusheen.gif"
+               alt="Derrick Chao" />
+          <p class="site-author-name" itemprop="name">Derrick Chao</p>
+           
+              <p class="site-description motion-element" itemprop="description">Share my everything in my life.</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">文章</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">標籤</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Form-Syntax"><span class="nav-number">1.</span> <span class="nav-text">Form Syntax</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#input-Element"><span class="nav-number">1.1.</span> <span class="nav-text">input Element</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Text-Input"><span class="nav-number">1.1.1.</span> <span class="nav-text">Text Input</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Radio-Button-Input"><span class="nav-number">1.2.</span> <span class="nav-text">Radio Button Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Submit-Button"><span class="nav-number">1.3.</span> <span class="nav-text">The Submit Button</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Action-Atrribute"><span class="nav-number">1.4.</span> <span class="nav-text">Action Atrribute</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Method-Attribute"><span class="nav-number">1.5.</span> <span class="nav-text">Method Attribute</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Name-Attribute"><span class="nav-number">1.6.</span> <span class="nav-text">Name Attribute</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Grouping-Form-Data-with-fieldset"><span class="nav-number">1.7.</span> <span class="nav-text">Grouping Form Data with fieldset</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Form-Elements"><span class="nav-number">2.</span> <span class="nav-text">Form Elements</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Select-Element"><span class="nav-number">2.1.</span> <span class="nav-text">Select Element</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#textarea-Element"><span class="nav-number">2.2.</span> <span class="nav-text">textarea Element</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#button-Element"><span class="nav-number">2.3.</span> <span class="nav-text">button Element</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#datalist-Elemnet"><span class="nav-number">2.4.</span> <span class="nav-text">datalist Elemnet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#keygen-Element"><span class="nav-number">2.5.</span> <span class="nav-text">keygen Element</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output-Element"><span class="nav-number">2.6.</span> <span class="nav-text">Output Element</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Input-Types"><span class="nav-number">3.</span> <span class="nav-text">Input Types</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Password"><span class="nav-number">3.1.</span> <span class="nav-text">Password</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reset"><span class="nav-number">3.2.</span> <span class="nav-text">Reset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Checkbox"><span class="nav-number">3.3.</span> <span class="nav-text">Checkbox</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Button"><span class="nav-number">3.4.</span> <span class="nav-text">Button</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5-New-Input-Types"><span class="nav-number">3.5.</span> <span class="nav-text">HTML5 New Input Types</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Color"><span class="nav-number">3.5.1.</span> <span class="nav-text">Color</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Date"><span class="nav-number">3.5.2.</span> <span class="nav-text">Date</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Datetime-local"><span class="nav-number">3.5.3.</span> <span class="nav-text">Datetime-local</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Email"><span class="nav-number">3.5.4.</span> <span class="nav-text">Email</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Month"><span class="nav-number">3.5.5.</span> <span class="nav-text">Month</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Number"><span class="nav-number">3.5.6.</span> <span class="nav-text">Number</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Range"><span class="nav-number">3.5.7.</span> <span class="nav-text">Range</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Search"><span class="nav-number">3.5.8.</span> <span class="nav-text">Search</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tel"><span class="nav-number">3.5.9.</span> <span class="nav-text">Tel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Time"><span class="nav-number">3.5.10.</span> <span class="nav-text">Time</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#URL"><span class="nav-number">3.5.11.</span> <span class="nav-text">URL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Week"><span class="nav-number">3.5.12.</span> <span class="nav-text">Week</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Input-Attributes"><span class="nav-number">4.</span> <span class="nav-text">Input Attributes</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Value"><span class="nav-number">4.1.</span> <span class="nav-text">Value</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Readonly"><span class="nav-number">4.2.</span> <span class="nav-text">Readonly</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Disabled"><span class="nav-number">4.3.</span> <span class="nav-text">Disabled</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Size"><span class="nav-number">4.4.</span> <span class="nav-text">Size</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Autocomplete"><span class="nav-number">4.5.</span> <span class="nav-text">Autocomplete</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Novalidate"><span class="nav-number">4.6.</span> <span class="nav-text">Novalidate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Autofocus"><span class="nav-number">4.7.</span> <span class="nav-text">Autofocus</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Form"><span class="nav-number">4.8.</span> <span class="nav-text">Form</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Formaction"><span class="nav-number">4.9.</span> <span class="nav-text">Formaction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Formenctype"><span class="nav-number">4.10.</span> <span class="nav-text">Formenctype</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Formmethod"><span class="nav-number">4.11.</span> <span class="nav-text">Formmethod</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Formnovalidate"><span class="nav-number">4.12.</span> <span class="nav-text">Formnovalidate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Formtarget"><span class="nav-number">4.13.</span> <span class="nav-text">Formtarget</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Height-and-Width"><span class="nav-number">4.14.</span> <span class="nav-text">Height and Width</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#List"><span class="nav-number">4.15.</span> <span class="nav-text">List</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Min-and-Max"><span class="nav-number">4.16.</span> <span class="nav-text">Min and Max</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Multiple"><span class="nav-number">4.17.</span> <span class="nav-text">Multiple</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pattern"><span class="nav-number">4.18.</span> <span class="nav-text">Pattern</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Placeholder"><span class="nav-number">4.19.</span> <span class="nav-text">Placeholder</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Required"><span class="nav-number">4.20.</span> <span class="nav-text">Required</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step"><span class="nav-number">4.21.</span> <span class="nav-text">Step</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Derrick Chao</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 強力驅動
+</div>
+
+<div class="theme-info">
+  主題 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
